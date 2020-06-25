@@ -1,0 +1,22 @@
+{
+  "allowFiltering": true,
+  "allowSorting": true,
+  "allowSortingBySummary": true,
+  "height": 570,
+  "showBorders": true,
+  "showColumnGrandTotals": true,
+  "showRowGrandTotals": true,
+  "showRowTotals": true,
+  "showColumnTotals": true,
+  "headerFilterAllowSearch": true,
+  "headerFilterShowRelevantValues": true,
+  "headerFilterWidth": 300,
+  "headerFilterHeight": 400,
+  "fieldChooserAllowSearch": true,
+  "fieldPanelVisible": true,
+  "allowColumnReordering": true,
+  "groupingAutoExpandAll": true,
+  "searchPanelVisible": true,
+  "pagingPageSize": 5,
+  "groupPanelVisible": true
+}

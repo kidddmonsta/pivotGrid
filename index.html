@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>DevExtreme Demo</title>
+    <title>Pivot Grid</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
@@ -10,89 +10,20 @@
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.6/css/dx.common.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn3.devexpress.com/jslib/19.2.6/css/dx.light.css"/>
     <script src="https://cdn3.devexpress.com/jslib/19.2.6/js/dx.all.js"></script>
-    <!-- <script src="data.js"></script> -->
-    <script src="DataAdapter.js"></script>
-    <script src="TableDataAdapter.js"></script>
-    <script src="TDAdapter.js"></script>
-    <script src="paginationAdapter.js"></script>
     <script src="moment.js"></script>
-    <!-- <script src="index.js"></script> -->
+    <script src="prepareData.js"></script>
+    <script src="index.js"></script>
+    <script src="config.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css"/>
 </head>
 <body class="dx-viewport">
 <div class="demo-container">
     <div id="pivotgrid-demo">
-        <div id="pivotgrid"></div>
+        <div id="pivotGrid"></div>
     </div>
 </div>
 </body>
-<script type="text/javascript">
-    formatData('TableColumnsName.json').then(function (val) {
-        formatTableData('TableData.json').then(function (key) {
-            formatTable('TableData.json').then(function (newJson) {
-                console.log(val);
-                var pivotGrid = $("#pivotgrid").dxPivotGrid({
-                    allowFiltering: true,
-                    allowSorting: true,
-                    allowSortingBySummary: true,
-                    height: 570,
-                    showBorders: true,
-                    headerFilter: {
-                        allowSearch: true,
-                        showRelevantValues: true,
-                        width: 300,
-                        height: 400
-                    },
-                    fieldChooser: {
-                        allowSearch: true
-                    },
-                    fieldPanel: {
-                        visible: true
-                    },
-                    dataSource: newJson,
-                    allowColumnReordering: true,
-                    //showBorders: true,
-                    grouping: {
-                        autoExpandAll: true,
-                    },
-                    searchPanel: {
-                        visible: true
-                    },
-                    paging: {
-                        pageSize: widgetSettings()
-                    },
-                    groupPanel: {
-                        visible: true
-                    },
-                    /*pager: {
-                        showPageSizeSelector: true,
-                        allowedPageSizes: widgetPageSize(),
-                        showInfo: true
-                    },*/
-                    columns: val.values
-                    /*columns: [
-                        "time",
-                        "duration",
-                        "IK_hours",
-                        "OC_hours",
-                        {
-                            dataField: "type_ois",
-                            groupIndex: 0
-                        }
-                    ]*/
-                }).dxDataGrid("instance");
-
-                $("#autoExpand").dxCheckBox({
-                    value: true,
-                    text: "Expand All Groups",
-                    onValueChanged: function (data) {
-                        dataGrid.option("grouping.autoExpandAll", data.value);
-                        console.log(data);
-                    }
-                });
-            });
-        });
-    });
-
+<script>
+    render("#pivotGrid");
 </script>
 </html>
